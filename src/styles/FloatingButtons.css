@@ -1,0 +1,78 @@
+.fab-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 90px;
+  background-color: var(--yellow);
+  color: var(--text-dark);
+  padding: 14px 28px;
+  border-radius: 30px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 5px 20px rgba(251, 188, 4, 0.45);
+  z-index: 999;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  font-size: 0.95rem;
+}
+
+.fab-btn:hover {
+  background-color: var(--yellow-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(251, 188, 4, 0.55);
+}
+
+.scroll-top-btn {
+  position: fixed;
+  bottom: 32px;
+  right: 24px;
+  background-color: var(--white);
+  color: var(--text-dark);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--border-color);
+  z-index: 999;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.scroll-top-btn:hover {
+  background-color: #f0f4ff;
+  color: var(--primary-blue);
+}
+
+.scroll-top-btn.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .fab-btn {
+    right: 16px;
+    bottom: 80px;
+    padding: 14px;
+    font-size: 0;
+    gap: 0;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    border-radius: 50%;
+  }
+
+  .fab-text {
+    display: none;
+  }
+
+  .scroll-top-btn {
+    right: 16px;
+    bottom: 20px;
+  }
+}

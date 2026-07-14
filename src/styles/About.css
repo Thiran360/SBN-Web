@@ -1,0 +1,301 @@
+/* Global Background for About Us section */
+.about-page-bg {
+  background-color: #f0f2f5; 
+  background-image: url('/images/sbn_hero_networking.png'); /* World connections background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 80px 20px;
+  position: relative;
+  min-height: 800px;
+}
+
+.about-page-bg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(240, 242, 245, 0.3); /* Reduced overlay to make image highly visible */
+  z-index: 0;
+}
+
+/* Base Card Layout */
+.about-content {
+  position: relative;
+  z-index: 10;
+}
+
+.about-card {
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  padding: 40px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0,0,0,0.05);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+/* Left Column */
+.about-image-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.logo-circle {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 4px solid #f1f5f9;
+}
+
+.logo-circle img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* President Image Specific styling */
+.president-portrait {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 4px solid #ffffff;
+}
+
+.president-signature {
+  margin-top: 20px;
+  text-align: center;
+}
+.president-signature p {
+  margin: 5px 0;
+  color: #374151;
+  font-size: 14px;
+}
+.president-signature strong {
+  font-size: 16px;
+  color: #111827;
+}
+
+.btn-yellow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #f5b027;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(245, 176, 39, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-yellow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(245, 176, 39, 0.6);
+}
+
+/* Right Column */
+.about-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #1c2d5a;
+  margin: 0 0 5px 0;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+.about-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.info-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+.info-card p {
+  margin: 0 0 12px 0;
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.6;
+}
+.info-card p:last-child {
+  margin-bottom: 0;
+}
+
+.info-card strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+.icon-bottom-right {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  color: #64748b;
+  opacity: 0.6;
+}
+
+.quote-card {
+  background: linear-gradient(to right, #b4e4df, #82c4be);
+  border-radius: 8px;
+  padding: 24px 50px;
+  margin-bottom: 20px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.quote-card p {
+  margin: 0;
+  font-size: 16px;
+  color: #1a2e2c;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+}
+
+.quote-mark {
+  font-size: 60px;
+  font-family: Georgia, serif;
+  color: #5da49d;
+  position: absolute;
+  line-height: 0;
+}
+
+.quote-mark.left {
+  top: 40px;
+  left: 15px;
+}
+
+.quote-mark.right {
+  bottom: 10px;
+  right: 15px;
+}
+
+.icon-row-top {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 15px;
+  color: #475569;
+}
+
+/* Mission specific lists inside info-card */
+.mission-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.mission-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f1f5f9;
+}
+.mission-list li:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.mission-list .check-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #3b82f6; /* SBN Blue */
+}
+.mission-list span {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  .about-image-column {
+    margin-bottom: 30px;
+  }
+  .quote-card {
+    padding: 24px 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-card {
+    padding: 24px 20px;
+  }
+  
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+    padding: 15px;
+    border-width: 3px;
+  }
+
+  .about-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .about-subtitle {
+    text-align: center;
+  }
+  
+  .president-portrait {
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-circle {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .quote-card {
+    padding: 20px;
+  }
+  
+  .info-card {
+    padding: 16px;
+  }
+}

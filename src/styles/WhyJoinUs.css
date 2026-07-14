@@ -1,0 +1,157 @@
+.why-join {
+  position: relative;
+  background-color: #f8fafc;
+  padding: 80px 0 0 0;
+  min-height: 800px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.why-join-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-image: url('/images/login-bg.png'); /* The network lines */
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.why-join .section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.glass-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 20px;
+}
+
+.glass-header .section-description {
+  color: #334155;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+/* Glassmorphic Cards Container */
+.glass-cards-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 350px; /* Give it space for overlapping */
+  z-index: 2;
+  padding-bottom: 150px; /* Space above wave */
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 25px 30px;
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+  position: absolute;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  z-index: 10 !important;
+}
+
+.card-left {
+  left: calc(50% - 520px);
+  top: 0;
+  z-index: 3;
+}
+
+.card-center {
+  left: calc(50% - 190px);
+  top: 100px;
+  z-index: 4;
+}
+
+.card-right {
+  right: calc(50% - 520px);
+  top: -20px;
+  z-index: 3;
+}
+
+.card-icon-wrapper {
+  flex-shrink: 0;
+  color: #2563eb;
+}
+
+.card-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.card-content p {
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Wave Transition */
+.wave-transition {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 0;
+}
+
+.wave-transition svg {
+  display: block;
+  width: 100%;
+  height: 250px;
+}
+
+@media (max-width: 1200px) {
+  .glass-cards-container {
+    flex-direction: column;
+    height: auto;
+    position: relative;
+    gap: 20px;
+    padding-bottom: 250px; /* Make room for the wave */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .glass-card {
+    position: relative !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    transform: none !important;
+  }
+  .glass-card:hover {
+    transform: translateY(-5px) !important;
+  }
+}

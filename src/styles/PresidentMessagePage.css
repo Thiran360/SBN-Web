@@ -1,0 +1,124 @@
+.president-page {
+  background-color: #ffffff;
+  padding-bottom: 80px;
+}
+
+.president-hero {
+  background: linear-gradient(135deg, #1c2d5a 0%, var(--sbn-blue) 100%);
+  padding: 56px 20px 48px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.president-hero h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.president-hero h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--sbn-yellow);
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+.president-hero p {
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 12px 0 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.president-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 20px 0;
+}
+
+.president-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.president-image-column {
+  position: sticky;
+  top: 100px;
+}
+
+.president-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.president-subtitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #009EDB;
+  letter-spacing: 0.5px;
+  display: block;
+}
+
+.president-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #009EDB;
+  margin: 5px 0 30px 0;
+}
+
+.president-body {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.8;
+  margin: 0 0 20px 0;
+}
+
+.president-signoff {
+  margin-top: 40px;
+}
+
+.president-signoff p {
+  font-size: 15px;
+  color: #4b5563;
+  line-height: 1.6;
+  margin: 5px 0;
+}
+
+.president-signoff strong {
+  font-weight: 600;
+  color: #009EDB;
+}
+
+@media (max-width: 992px) {
+  .president-grid {
+    grid-template-columns: 1fr 1.5fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .president-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .president-image-column {
+    position: static;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .president-title {
+    font-size: 28px;
+  }
+}

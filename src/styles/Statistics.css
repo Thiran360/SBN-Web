@@ -1,0 +1,93 @@
+.statistics {
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.statistics::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(58, 103, 177, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Aligns items to top so numbers stay perfectly level */
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-item {
+  flex: 1;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-8px);
+}
+
+.stat-item h3 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+  color: var(--sbn-blue, #0056b3) !important;
+}
+
+.stat-item p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-medium);
+  max-width: 220px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.stat-divider {
+  width: 2px;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+  margin-top: 15px; /* Push down slightly to stay vertically centered with the numbers and text */
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .stat-divider {
+    width: 80px;
+    height: 2px;
+    margin: 0 auto;
+  }
+
+  .stat-item h3 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .statistics {
+    padding: 60px 0;
+  }
+
+  .stat-item h3 {
+    font-size: 2.5rem;
+  }
+
+  .stat-item p {
+    font-size: 1rem;
+  }
+}

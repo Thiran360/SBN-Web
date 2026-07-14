@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+:root {
+  /* Brand Colors */
+  --sbn-blue: #3A67B1;
+  --sbn-yellow: #EDBE38;
+  --sbn-red: #CF2030;
+  
+  /* Text and Backgrounds */
+  --text-dark: #000000;
+  --text-medium: #64666A;
+  --text-light: #FFFFFF;
+  --bg-light: #FFFFFF;
+  --bg-gray: #F2F2F2;
+  --bg-dark: #12141D;
+
+  /* Gradients */
+  --gradient-blue: linear-gradient(90deg, #3A67B1 0%, #1c407d 100%);
+  --gradient-red: linear-gradient(90deg, #CF2030 63.67%, #9A0D1A 100%);
+
+  /* Typography */
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: "Inter", sans-serif;
+  
+  --shadow-sm: 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 8px 11px 0 rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 4px 16px 0 rgba(0, 0, 0, 0.16);
+
+  /* Border Radius for more rounded look */
+  --border-radius-sm: 12px;
+  --border-radius-md: 20px;
+  --border-radius-lg: 32px;
+  --border-radius-full: 9999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.3s ease;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+/* Utilities */
+.container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.text-gradient {
+  background: var(--gradient-blue);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.btn-primary {
+  display: inline-flex;
+  height: 44px;
+  padding: 0 24px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px !important;
+  background: var(--gradient-blue);
+  color: var(--text-light) !important;
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+  background: var(--text-dark);
+  color: var(--text-light);
+}
+
+.btn-large {
+  height: 64px;
+  padding: 0 48px;
+  font-size: 20px;
+  border-radius: 9999px !important;
+}
+
+/* Common Layouts */
+.main-content {
+  margin-top: 80px; /* Push below fixed navbar on sub-pages */
+  min-height: calc(100vh - 80px);
+}
+
+.main-content--home {
+  margin-top: 0; /* Hero fills viewport edge-to-edge behind the navbar */
+}
+
+.split-section {
+  padding: 80px 16px;
+}
+
+.split-container {
+  display: flex;
+  gap: 64px;
+  align-items: center;
+}
+
+.split-left, .split-right {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .split-container {
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+
+/* Mobile responsive adjustments for member lists */
+@media (max-width: 768px) {
+  .member-list-item, .table-member-item {
+    position: relative;
+    padding-right: 42px !important;
+  }
+  .member-actions-wrapper {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 4px !important;
+  }
+  .delete-member-btn {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    width: 28px !important;
+    min-width: 28px !important;
+    height: 28px !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+  }
+  .delete-member-btn svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+}

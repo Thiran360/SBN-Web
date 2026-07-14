@@ -1,0 +1,287 @@
+/* =============================================
+   MEMBERS LOGIN PAGE - CENTERED PREMIUM DESIGN
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+.ml-page {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  background: url('../assets/memerlogin.png') no-repeat center center / cover;
+}
+
+/* Removed dark overlay so the exact uploaded image is fully visible */
+.ml-overlay {
+  display: none;
+}
+
+/* Container for the form card */
+.ml-form-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The Glassmorphism Card */
+.ml-form-card {
+  width: 100%;
+  max-width: 440px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 40px 48px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 
+              inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Brand Header inside the card */
+.ml-brand-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.ml-logo {
+  height: 85px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.ml-form-badge {
+  display: inline-block;
+  background: rgba(58, 103, 177, 0.1);
+  color: var(--sbn-blue, #3a67b1);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 5px 16px;
+  border-radius: 50px;
+  text-transform: uppercase;
+}
+
+/* Form Header Titles */
+.ml-form-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.ml-form-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #0d1b3e;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.ml-form-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Form Fields */
+.ml-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.ml-field {
+  margin-bottom: 20px;
+}
+
+.ml-field label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.ml-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.ml-label-row label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+}
+
+.ml-forgot {
+  font-size: 12px;
+  color: var(--sbn-blue, #3a67b1);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.ml-forgot:hover {
+  opacity: 0.75;
+}
+
+/* Input Wrappers */
+.ml-input-wrap {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.ml-input-wrap:focus-within {
+  border-color: var(--sbn-blue, #3a67b1);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(58, 103, 177, 0.1);
+}
+
+.ml-input-icon {
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  color: #94a3b8;
+  flex-shrink: 0;
+}
+
+.ml-input-wrap input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 14px 10px 14px 0;
+  font-size: 14px;
+  color: #0f172a;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+}
+
+.ml-input-wrap input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+/* Password Toggle */
+.ml-toggle-pw {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  color: #94a3b8;
+  transition: color 0.2s;
+}
+
+.ml-toggle-pw:hover {
+  color: var(--sbn-blue, #3a67b1);
+}
+
+/* Error Message */
+.ml-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fef2f2;
+  border: 1.5px solid #fecaca;
+  color: #dc2626;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  animation: ml-shake 0.4s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+@keyframes ml-shake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Button & Spinner */
+.ml-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2.5px solid rgba(255,255,255,0.4);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: ml-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ml-spin {
+  to { transform: rotate(360deg); }
+}
+
+.ml-btn-login {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 20px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--sbn-blue, #3a67b1) 0%, #1c407d 100%);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 8px;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 4px 12px rgba(28, 64, 125, 0.3);
+}
+
+.ml-btn-login:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(28, 64, 125, 0.4);
+}
+
+.ml-btn-login:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ml-btn-login:disabled {
+  opacity: 0.85;
+  cursor: not-allowed;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .ml-form-container {
+    padding: 16px;
+  }
+  
+  .ml-form-card {
+    padding: 32px 24px;
+    border-radius: 20px;
+  }
+  
+  .ml-form-title {
+    font-size: 24px;
+  }
+}

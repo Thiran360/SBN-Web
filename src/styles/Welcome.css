@@ -1,0 +1,343 @@
+.welcome {
+  margin-top: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.split-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.split-left {
+  flex: 1.2;
+}
+
+.split-right {
+  flex: 1;
+}
+
+@media (max-width: 992px) {
+  .split-container {
+    flex-direction: column;
+  }
+}
+
+.welcome-text {
+  background: linear-gradient(135deg, rgba(58, 103, 177, 0.04) 0%, rgba(255, 255, 255, 0.8) 100%);
+  padding: 48px;
+  border-radius: 40px;
+  /* Pod-like rounded corners */
+  box-shadow: 0 24px 48px -12px rgba(58, 103, 177, 0.15), 0 4px 12px rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(58, 103, 177, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* Light effect layer */
+.welcome-text::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+  transform: scale(0.8);
+}
+
+.welcome-text:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 32px 64px -12px rgba(58, 103, 177, 0.25), 0 0 50px rgba(255, 255, 255, 0.6);
+  border-color: rgba(58, 103, 177, 0.3);
+}
+
+.welcome-text:hover::before {
+  opacity: 1;
+  transform: scale(1);
+  animation: pulsingLight 4s ease-in-out infinite alternate;
+}
+
+@keyframes pulsingLight {
+  0% {
+    transform: scale(1) translate(-2%, -2%);
+  }
+
+  100% {
+    transform: scale(1.1) translate(2%, 2%);
+  }
+}
+
+/* Ensure text is above the light effect */
+.welcome-text>* {
+  position: relative;
+  z-index: 1;
+}
+
+.welcome-text h2 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 24px;
+  color: var(--sbn-blue);
+}
+
+.welcome-text p {
+  color: #334155;
+  font-size: 1.15rem;
+  margin-bottom: 36px;
+  line-height: 1.85;
+}
+
+.feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--sbn-blue);
+  padding: 16px 20px;
+  background: #E8F5F3;
+  border: 1px solid #BFE8E0;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 191, 165, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 191, 165, 0.15);
+}
+
+.feature-list .check-icon {
+  background-color: var(--sbn-blue);
+  color: #E8F5F3;
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+.welcome-image {
+  text-align: center;
+  perspective: 1000px;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 55%;
+}
+
+.image-wrapper:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.welcome-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 16px;
+}
+
+.globe-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 600px; /* Increased height to fit globe and text */
+  position: relative;
+  background-color: #000000; /* Black background */
+  border-radius: 32px; /* Rounded corners for pod look */
+  padding: 24px;
+  transition: none; /* remove hover bounce for 3D canvas */
+  overflow: hidden;
+}
+
+.globe-wrapper:hover {
+  transform: none;
+}
+
+.globe-container {
+  width: 100%;
+  height: 450px; /* Fixed height for video to render correctly */
+  position: relative;
+  left: 0;
+  z-index: 1;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcome-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* covers the container, zooming in */
+  transform: scale(1.3); /* zoom in a bit more to make the earth larger */
+  border-radius: 16px;
+  pointer-events: none; /* prevents user from accidentally pausing it */
+}
+
+.globe-stats {
+  position: relative;
+  right: auto;
+  top: auto;
+  transform: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  text-align: center;
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.globe-stats .number {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffffff; /* White text for black background */
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.globe-stats .badge-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #d1d5db; /* Light gray text for visibility */
+  line-height: 1.4;
+  max-width: none;
+}
+
+/* Fallback for the old badge if used elsewhere */
+.stats-badge:not(.globe-stats) {
+  position: absolute;
+  top: 15%;
+  right: -25%;
+  background: #ffffff;
+  color: var(--sbn-blue);
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+  padding: 20px;
+  text-align: center;
+  animation: float 6s ease-in-out infinite;
+  border: 4px solid var(--sbn-yellow);
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.stats-badge .number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.stats-badge .badge-text {
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-top: 6px;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .welcome-text h2 {
+    font-size: 2rem;
+  }
+
+  .welcome-image {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .welcome-image img {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .stats-badge:not(.globe-stats) {
+    position: relative;
+    margin: 20px auto 0;
+    top: 0;
+    right: 0;
+  }
+
+  .globe-wrapper {
+    height: 450px;
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .globe-container {
+    height: 300px;
+  }
+
+  .globe-stats .number {
+    font-size: 3rem;
+  }
+
+  .globe-stats .badge-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-text h2 {
+    font-size: 1.7rem;
+  }
+
+  .feature-list li {
+    font-size: 1rem;
+  }
+
+  .globe-wrapper {
+    height: 400px;
+    padding: 12px;
+  }
+
+  .globe-container {
+    height: 250px;
+  }
+
+  .globe-stats .number {
+    font-size: 2.5rem;
+  }
+}

@@ -1,0 +1,123 @@
+.benefits-page {
+  background-color: #ffffff;
+  padding-top: 120px;
+  padding-bottom: 80px;
+}
+
+.benefits-hero {
+  background: linear-gradient(135deg, #1c2d5a 0%, var(--sbn-blue) 100%);
+  padding: 56px 20px 48px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.benefits-hero h1 {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.benefits-hero h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--sbn-yellow);
+  margin: 14px auto 0;
+  border-radius: 2px;
+}
+
+.benefits-hero p {
+  font-size: 14px;
+  opacity: 0.75;
+  margin: 12px 0 0;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.benefits-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 20px 0;
+}
+
+.benefits-card {
+  background-color: #5ebfa0; /* Sea-green / Teal color matching screenshot */
+  border-radius: 16px;
+  margin-bottom: 60px;
+  padding: 80px 100px;
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(94, 191, 160, 0.2);
+}
+
+.benefits-bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.pattern-top {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 350px;
+  height: 350px;
+}
+
+.pattern-bottom {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  width: 350px;
+  height: 350px;
+}
+
+.benefits-content {
+  position: relative;
+  z-index: 1;
+}
+
+.benefits-content h2 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  color: #ffffff;
+}
+
+.benefits-content p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+}
+
+@media (max-width: 992px) {
+  .benefits-card {
+    padding: 60px 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .benefits-card {
+    padding: 50px 25px;
+  }
+  
+  .benefits-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .benefits-content p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}
